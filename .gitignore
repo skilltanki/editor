@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.log
+# public/ is COMMITTED (binaries via git lfs, see .gitattributes): the editor
+# needs every prop library, so it must work without running sync-assets.
+# Regenerate with scripts/sync-assets.mjs only when the asset set changes.

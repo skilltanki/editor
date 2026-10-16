@@ -1,0 +1,59 @@
+{
+  "libraries": [
+    {
+      "name": "Buildings v1 Old",
+      "folder": "buildings_v1_old",
+      "file": "/props/buildings_v1_old/library.xml"
+    },
+    {
+      "name": "Builds Old",
+      "folder": "builds_old",
+      "file": "/props/builds_old/library.xml"
+    },
+    {
+      "name": "Castle Old",
+      "folder": "castle_old",
+      "file": "/props/castle_old/library.xml"
+    },
+    {
+      "name": "Complex Build v1 Old",
+      "folder": "complex_build_v1_old",
+      "file": "/props/complex_build_v1_old/library.xml"
+    },
+    {
+      "name": "Elements v1 Old",
+      "folder": "elements_v1_old",
+      "file": "/props/elements_v1_old/library.xml"
+    },
+    {
+      "name": "kahgel Old",
+      "folder": "kahgel_old",
+      "file": "/props/kahgel_old/library.xml"
+    },
+    {
+      "name": "kariz Old",
+      "folder": "kariz_old",
+      "file": "/props/kariz_old/library.xml"
+    },
+    {
+      "name": "Land v1 Old",
+      "folder": "land_v1_old",
+      "file": "/props/land_v1_old/library.xml"
+    },
+    {
+      "name": "Landscape Old",
+      "folder": "landscape_old",
+      "file": "/props/landscape_old/library.xml"
+    },
+    {
+      "name": "yonje Old",
+      "folder": "yonje_old",
+      "file": "/props/yonje_old/library.xml"
+    },
+    {
+      "name": "zamin Old",
+      "folder": "zamin_old",
+      "file": "/props/zamin_old/library.xml"
+    }
+  ]
+}
