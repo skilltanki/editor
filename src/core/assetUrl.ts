@@ -1,9 +1,9 @@
-// Where the editor DATA (maps, prop libraries, registries) lives. Dev serves
-// it from the editor's own public/ (vite publicDir) at the vite base (/); a
-// production build sets VITE_ASSET_BASE=/assets/ and the worker streams the
-// SAME store from R2 — one tree for game and editor, uploaded once. The
-// editor's own JS/CSS always stays at the root.
-const DATA_BASE: string = import.meta.env.VITE_ASSET_BASE ?? import.meta.env.BASE_URL;
+// Where the editor DATA (maps, prop libraries, registries) lives: the editor's
+// own public/ (vite publicDir), served at the site root — `/editor-maps.json`,
+// `/editor-props.json`, `/maps/**`, `/props/**`, `/embedded/**`. Dev serves the
+// folder as is; a build copies it into dist/ next to the bundle, so the same
+// paths hold in production with no separate asset store.
+const DATA_BASE: string = import.meta.env.BASE_URL;
 
 export function assetUrl(path: string): string {
   if (/^[a-z][a-z0-9+.-]*:/i.test(path)) {

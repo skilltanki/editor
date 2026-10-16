@@ -132,7 +132,7 @@ export class AssetProgress {
 /**
  * Absolute URLs reach us from PlayCanvas and the renderer; the byte counter
  * must key them identically, so everything is reduced to the store-root path
- * (the asset base — / in dev, /assets/ in prod — stripped off).
+ * (the data root — the vite base — stripped off).
  */
 let basePath: string | null = null;
 

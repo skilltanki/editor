@@ -138,7 +138,7 @@ async function main(): Promise<void> {
   // Every prop library, so the palette can offer all of them.
   chrome.setStatus('Loading libraries...');
   // Prop meshes/textures are fetched as `${base}/props/...` — the base is the
-  // data store (vite base in dev, VITE_ASSET_BASE in prod), or every .3ds 404s.
+  // data root (public/, served at the vite base), or every .3ds 404s.
   const renderer = new PropRenderer(app, assetUrl('/').replace(/\/$/, ''));
   const libraries = await loadLibraryList();
   loadingScreen.setPhase('Libraries');

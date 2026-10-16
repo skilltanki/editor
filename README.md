@@ -53,20 +53,3 @@ npx tsc --noEmit && VITE_ASSET_BASE=/assets/ npx vite build  # deploy build, dat
 ```
 
 The production bundle is minified with terser and then obfuscated, with hash-only chunk names so the module map does not leak through URLs. `copyPublicDir` is off: in production the same map and prop tree is streamed from the shared R2 bucket, uploaded once with `scripts/upload-assets.mjs` (needs `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`; `--local` targets a local workerd through wrangler). The upload is idempotent: objects whose size and md5 already match are skipped.
-
-## Layout
-
-```
-index.html            page shell, favicon from public/logo.png
-src/main.ts           bootstrap: PlayCanvas app, simRoot, menu and toolbar handlers
-src/core/             document, occupancy map, event journal, camera, picking, grid, key mapper
-src/prop/             Prop model: tile, sprite, spawn, bonus, flag
-src/render/           PropRenderer: 3DS meshes, textures, selection tint, gizmos, collision view
-src/io/               Tanks XML importer and exporter, .lvl format, collision primitives
-src/ui/               chrome (menus, toolbar, panels), prop palette, preview, loading screen
-src/engine/           verbatim copy of the game's math, 3DS parser, library parser and mesh builder
-scripts/              sync-assets.mjs (monorepo dev data) and upload-assets.mjs (R2)
-public/               editor-maps.json, editor-props.json, maps/, props/, embedded/
-```
-
-Coordinates follow the game: the scene is Z-up with 1 unit = 1 cm, and a single `simRoot` entity rotates and scales it into PlayCanvas's Y-up metres. Every file in `src/engine` is a copy of the game's module, not an import, so the editor builds and typechecks on its own. When the game's copy changes, re-copy the file instead of patching it here.
